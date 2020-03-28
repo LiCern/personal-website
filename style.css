@@ -3,6 +3,15 @@ body {
     font-family: 'IBM Plex Mono', monospace;
 }
 
+.div-block{
+    display:grid;
+    padding-top: 30px;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 4px;
+    grid-row-gap: 8px;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: auto auto;
+}
 .cta-email {
     padding-right: 30px;
     font-family: 'Cormorant Garamond', serif;
