@@ -23,3 +23,14 @@ body {
     text-decoration-style: none;
 }
 
+.div-block-2 {
+    display: grid;
+    grid-template-columns: repeat(8, 10%);
+    grid-template-rows: repeat(8, 10%);
+}
+
+.followingadventures {
+    display: grid;
+    grid-area: 1/8/2/9;
+
+}
