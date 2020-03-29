@@ -44,3 +44,9 @@ body {
     text-align: left;
 
 }
+
+.sections {
+    display: block;
+    padding: 100px 30px;
+    border-bottom: 1px solid #b7b3b1;
+}
