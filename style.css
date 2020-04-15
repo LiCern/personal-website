@@ -1,21 +1,43 @@
-*{ padding: 0px;
+*{ 
+    padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
 
 body {
+    display: grid;
     background-color:#faf1ea;
     font-family: 'IBM Plex Mono', monospace;
 }
 
-.div-block{
-    display:grid;
-    padding-top: 30px;
-    grid-auto-columns: 1fr;
-    grid-column-gap: 4px;
-    grid-row-gap: 8px;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: auto auto;
+.parent {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 2 / 4; }
+    .div2 { grid-area: 1 / 7 / 2 / 9; }
+    .div3 { grid-area: 3 / 3 / 6 / 7; }
+    .div4 { grid-area: 4 / 2 / 5 / 4; }
+    .div5 { grid-area: 2 / 5 / 4 / 7; }
+    .div6 { grid-area: 9 / 3 / 12 / 7; }
+    .div7 { grid-area: 3 / 1 / 6 / 2; }
+
+ul {
+    width: 570px;
+    padding: 15px;
+    margin: 0px auto 0px auto;
+    border-top: 2px solid #000;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    margin: 0px 3px;
 }
 .cta-email {
     padding-right: 30px;
@@ -27,15 +49,44 @@ body {
     text-decoration-style: none;
 }
 
-.div-block-2 {
+.parent{
     display: grid;
-    grid-template-columns: repeat(8, 10%);
-    grid-template-rows: repeat(8, 10%);
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 150px 1fr;
 }
 
-.followingadventures {
+.child-1{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.child-2{
+    
+    margin-left: 200px;
+}
+.child-3{
+    margin-right: 200px;
+   
+}
+
+#top-logo {
     display: grid;
-    grid-area: 1/8/2/9;
+    width: 100%;
+    height: 100%;
+}
+
+#central-img {
+    width: 50%;
+    height: 100%;
+
+}
+
+/* .div-block-2 {
+    
+} */
+
+.followingadventures {
+    display: flex;
+    
 
 }
 
@@ -50,7 +101,7 @@ body {
 }
 
 .sections {
-    display: block;
+    
     padding: 100px 30px;
     border-bottom: 1px solid #b7b3b1;
 }
@@ -58,12 +109,13 @@ body {
 .carousel-container{
     width: 60%;
     margin: auto;
-    border: 5px solid #f13f3d;
+    
 }
 .carousel-slide{
-    display: flex;
+
     width: 100%;
     height: 500px;
+    border: 5px solid #f13f3d;
 
 }
 
