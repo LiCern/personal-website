@@ -67,3 +67,7 @@ body {
 
 }
 
+.carousel-slide img{
+    width: 100%;
+}
+
