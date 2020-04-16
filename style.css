@@ -1,19 +1,9 @@
-*{ 
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
 
-body {
-    display: grid;
-    background-color:#faf1ea;
-    font-family: 'IBM Plex Mono', monospace;
-}
 
 .parent {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(8, 12vw);
+    grid-template-rows: repeat(12, 12vw);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
@@ -25,101 +15,19 @@ body {
     .div5 { grid-area: 2 / 5 / 4 / 7; }
     .div6 { grid-area: 9 / 3 / 12 / 7; }
     .div7 { grid-area: 3 / 1 / 6 / 2; }
+    .div8 { grid-area: 6 / 3 / 7 / 7; }
+    .div9 { grid-area: 7 / 3 / 8 / 7; }
+    .div10 { grid-area: 8 / 3 / 9 / 7; }
+/* 
+ img {
+     max-height: 100%;
+     max-width: 100%;
+ } */
 
-ul {
-    width: 570px;
-    padding: 15px;
-    margin: 0px auto 0px auto;
-    border-top: 2px solid #000;
-    border-bottom: 1px solid #000;
-    text-align: center;
-}
+    #central-logo {
 
-li {
-    display: inline;
-    margin: 0px 3px;
-}
-.cta-email {
-    padding-right: 30px;
-    font-family: 'Cormorant Garamond', serif;
-    color: #000000;
-    font-size:30px;
-    line-height: 100%;
-    text-align:right;
-    text-decoration-style: none;
-}
-
-.parent{
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    grid-template-rows: 150px 1fr;
-}
-
-.child-1{
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.child-2{
+        
+        vertical-align: middle;
+        
+    }
     
-    margin-left: 200px;
-}
-.child-3{
-    margin-right: 200px;
-   
-}
-
-#top-logo {
-    display: grid;
-    width: 100%;
-    height: 100%;
-}
-
-#central-img {
-    width: 50%;
-    height: 100%;
-
-}
-
-/* .div-block-2 {
-    
-} */
-
-.followingadventures {
-    display: flex;
-    
-
-}
-
-.application-links {
-    font-family: 'Old Standard TT', serif;
-    color: #000000;
-    padding-left: 30px;
-    font-size: 30px;
-    line-height: 100%;
-    text-align: left;
-
-}
-
-.sections {
-    
-    padding: 100px 30px;
-    border-bottom: 1px solid #b7b3b1;
-}
-
-.carousel-container{
-    width: 60%;
-    margin: auto;
-    
-}
-.carousel-slide{
-
-    width: 100%;
-    height: 500px;
-    border: 5px solid #f13f3d;
-
-}
-
-.carousel-slide img{
-    width: 100%;
-}
-
