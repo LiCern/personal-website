@@ -7,8 +7,6 @@ const nextButton = document.querySelector('#n')
 let counter = 0;
 const scrollWidth = carouselImages[0].clientWidth;
 
-//toggle automatically through
-
 //transition
 
 const transitionSlideForward = () => {
@@ -24,13 +22,25 @@ const transitionSlideBack = () => {
 }
 
 
+// toggle automatically through and play/pause functions 
+
+let autoLoop = setInterval(transitionSlideForward, 5000);   
+
+const stopLoop = () => {
+    clearInterval(autoLoop);
+}
+
+const startLoop = () => {
+    autoLoop = setInterval(transitionSlideForward, 5000);
+}
+
+document.getElementById("play-button").addEventListener("click", startLoop); //if clicked, restarts loop
+document.getElementById("pause-button").addEventListener("click", stopLoop); //if clicked, clears interval and pauses carousel
 
 
-function autoLoop() {
-    setInterval(transitionSlideForward, 5000);
-    
-  }  
-  autoLoop();
+
+
+
 
 
 
