@@ -21,6 +21,18 @@ const transitionSlideBack = () => {
     carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
 }
 
+const forwardResetTimer = () => {
+    transitionSlideForward();
+    clearInterval(autoLoop);
+    autoLoop = setInterval(transitionSlideForward, 5000);
+}
+
+const backwardResetTimer = () => {
+    transitionSlideBack();
+    clearInterval(autoLoop);
+    autoLoop = setInterval(transitionSlideForward, 5000);
+
+}
 
 // toggle automatically through and play/pause functions 
 
