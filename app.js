@@ -36,7 +36,8 @@ const startLoop = () => {
 
 document.getElementById("play-button").addEventListener("click", startLoop); //if clicked, restarts loop
 document.getElementById("pause-button").addEventListener("click", stopLoop); //if clicked, clears interval and pauses carousel
-
+document.getElementById("next-button").addEventListener("click", transitionSlideForward);
+document.getElementById("back-button").addEventListener("click", transitionSlideBack);
 
 
 
