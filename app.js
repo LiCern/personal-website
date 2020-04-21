@@ -11,15 +11,35 @@ carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'
 //Transition functions (a.k.a the backbone of the carousel)
 
 const transitionSlideForward = () => {
-    carouselSlide.style.transition = 'transform 1s ease-in';
+    if ( carouselImages[counter].id == "firstImageCopy") {
+        carouselSlide.style.transition = 'none';
+        counter = 1;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
+        // carouselSlide.style.transition = 'transform 1s ease-in';
+        counter++;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+        
+    }
+
+    else { carouselSlide.style.transition = 'transform 1s ease-in';
     counter++;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; }
 }
 
 const transitionSlideBack = () => {
-    carouselSlide.style.transition = 'transform 1s ease-in';
+    if (carouselImages[counter].id == "lastImageCopy") {
+        carouselSlide.style.transition = 'none';
+        counter = carouselImages.length - 2;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+        // carouselSlide.style.transition = 'none';
+        counter--;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+        
+    }
+    
+    else { carouselSlide.style.transition = 'transform 1s ease-in';
     counter--;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';}
 }
 
 
