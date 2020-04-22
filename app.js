@@ -6,7 +6,6 @@ const carouselImages = document.querySelectorAll('.carousel-slide img');
 
 let counter = 1;
 const scrollWidth = carouselImages[0].clientWidth;
-console.log(scrollWidth);
 carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; //in order to start at the first image and not the lastImageCopy when the page loads
 
 //Transition functions (a.k.a the backbone of the carousel)
