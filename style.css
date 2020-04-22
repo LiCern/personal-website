@@ -4,7 +4,7 @@
 .parent {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 8vh 2vh repeat(24, 12vw);
+    grid-template-rows: 8vh 2vh repeat(20, 12vw);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     background-color:#fcdcdc;
@@ -65,6 +65,76 @@
     }
 
 
+
+
+  
+
+    #fun-facts-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #f13f3d;
+        width: 120px;
+        height: 120px;
+        position: static;
+        position: fixed;
+        bottom: 70%;
+        right: 2%;
+        font-size: 20px;
+        font-family: 'Cormorant Garmond', serif;
+        text-decoration: none;
+        color: #fcdcdc;
+    }
+
+    #why-FAC-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #f13f3d;
+        width: 120px;
+        height: 120px;
+        position: static;
+        position: fixed;
+        bottom: 10%;
+        right: 2%;
+        font-size: 20px;
+        font-family: 'Cormorant Garmond', serif;
+        text-decoration: none;
+        color: #fcdcdc;
+        
+    }
+
+
+     
+    
+    #japan-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #f13f3d;
+        width: 120px;
+        height: 120px;
+        position: static;
+        position: fixed;
+        bottom: 40%;
+        right: 2%;
+        font-size: 20px;
+        
+        text-decoration: none;
+        color: #fcdcdc;
+        font-family: 'Cormorant Garmond', serif;
+    }
+
+
+
+
+
    #central-img {
        border-radius: 50%;}
 
@@ -81,7 +151,7 @@
     .div8 { grid-area: 8 / 2 / 12 / 8; 
         padding-left: 60px;
         padding-right: 60px;
-        font-size: 1.2vw;
+        font-size: 1.5vw;
         text-align: center;
         color: #f13f3d;
     }
@@ -95,7 +165,7 @@
 
     /* Carousel styling */
 
-    .div6 { grid-area: 12 / 3 / 15 / 7; }
+    .div6 { grid-area: 13 / 3 / 17 / 7; }
 
     .carousel-container {
         width: 100%;
@@ -127,7 +197,7 @@
 
     #back-button {
         position: absolute;
-        bottom: 0;
+        bottom: 20%;
         left: 32%;
          outline: none;
     
@@ -135,21 +205,21 @@
 
     #next-button {
         position: absolute;
-        bottom: 0;
+        bottom: 20%;
         right: 32%;
         outline: none;
     }
 
     #play-button {
         position: absolute;
-        bottom: 0;
+        bottom: 20%;
         left: 42%;
         outline: none;
     }
 
     #pause-button {
         position: absolute;
-        bottom: 0;
+        bottom: 20%;
         right: 42%;
         outline: none;
     }
@@ -159,21 +229,23 @@
     /* Why FAC styling */
 
 
-    .div9 { grid-area: 17/ 1/ 22/ 9;
-        padding-left: 10%;
-        padding-right: 10%;
+    .div9 { grid-area: 18/ 1/ 22/ 9;
+        
+        padding-left: 12%;
+        padding-right: 12%;
     }
 
     .div9 .div9text {
         column-count: 4;
-        column-gap: 4vw;
-        font-size: 1.75vh;
+        column-gap: 3vw;
+        font-size: 1.6vh;
         column-rule-style: dotted;
+        text-align: center;
     }
 
     .div9 h3 {
         color: #f13f3d;
-        font-size: 3vh;
+        font-size: 2.5vh;
         text-align: center;
         
     }
@@ -186,30 +258,30 @@
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* RESPONSIVENESS: NEW LAYOUT FOR MOBILES */
+
     @media (min-width: 320px) and (max-width: 550px) {
 
-        /* body {  background-color:#fcdcdc;
-        }
-        
-        .parent {  display: flex;   
-            flex-direction: column;
-            background-color:#fcdcdc;
-        }
-        #application-1, #application-2, #application-3 {
-            font-size: 1vh;
-            text-align: justify;
-        }
-         #central-logo {
-        position: absolute;
-        width: 50%;
-        top: 0;
-        }
-        #top-logo {
-            position: absolute;
-        }
-        #central-img {
-            position: relative;
-        } */
 
         .parent {
             display: grid;
@@ -283,9 +355,12 @@
                      }
 
             .div7 {   grid-area: 3 / 4 / 4 / 5;
-                font-size: 2vw;
+                font-size: 2vw;    
+                }
 
-                
+
+                .fun-facts-button, .why-FAC-button, .japan-button {
+                    display: none;
                 }
 
             .div8 { grid-area: 5 / 1 / 9 / 5; 
@@ -299,7 +374,6 @@
                 hr {
             border-top: 1px dotted red;
             }
-
 
 
 
