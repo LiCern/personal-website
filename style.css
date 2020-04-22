@@ -186,81 +186,71 @@
     }
 
 
-
     @media (min-width: 320px) and (max-width: 550px) {
-   
-        /* body {  background-color:#fcdcdc;
 
+        /* body {  background-color:#fcdcdc;
         }
         
         .parent {  display: flex;   
             flex-direction: column;
             background-color:#fcdcdc;
         }
-
         #application-1, #application-2, #application-3 {
             font-size: 1vh;
             text-align: justify;
         }
-
          #central-logo {
         position: absolute;
         width: 50%;
         top: 0;
         }
-
-
         #top-logo {
             position: absolute;
-
-
         }
-
         #central-img {
             position: relative;
         } */
 
         .parent {
             display: grid;
-            grid-template-columns: repeat(4, 25%);
-            grid-template-rows: 8vh repeat(12, 12vw);
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 8vh repeat(12, 1fr);
             grid-column-gap: 0px;
             grid-row-gap: 0px;
             background-color:#fcdcdc;
             font-family: 'IBM Plex Mono', monospace;}
-        
-            /* img {
+
+            img {
                 max-height: 100%;
-                max-width: 100%;}  */
-           
-            
-               
+                max-width: 100%;} 
+
+
             #application-1 { 
                 grid-area: 1 / 1 / 2 / 2;
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;}
-        
-        
+
+
             #application-2 { 
                 grid-area: 1 / 2 / 2 / 3;
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;}
-        
+
             #application-3 { 
                 grid-area: 1 / 3 / 2 / 4;
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;}
-        
+
             .application-links {
                 font-family: 'Cormorant Garmond', serif;
                 color: #000000;
                 font-size: 2vw;
             }
-        
-        
+
+
            #email-link { 
             grid-area: 1 / 4 / 2 / 5; 
             display: flex;
@@ -271,31 +261,31 @@
             font-size:2vw;
             line-height: 100%;
             text-decoration-style: none;}
-        
+
             .application-links img {
                 height: 20%
             }
-        
-        
+
+
             .div7 {
                 padding-left: 30%;
             }
-        
-        
+
+
            #central-img {
                border-radius: 50%;}
-        
+
             .div3 { grid-area: 3 / 2 / 5 / 4;}
 
             .div4 { grid-area: 4 / 2 / 7 / 4; }
-                    
+
             .div5 { grid-area: 3 / 2 / 5 / 3; 
                      }
-            
+
             .div7 { grid-area: 4 / 1 / 7 / 2; 
                     display: flex;
                     align-content: flex-end;}
-        
+
             .div8 { grid-area: 8 / 2 / 12 / 8; 
                 padding-left: 60px;
                 padding-right: 60px;
@@ -303,110 +293,105 @@
                 text-align: center;
                 color: #f13f3d;
             }
-            
+
                 hr {
             border-top: 1px dotted red;
             }
-        
-        
-        
-        
+
+
+
+
             /* Carousel styling */
-        
+
             .div6 { grid-area: 12 / 3 / 15 / 7; }
-        
+
             .carousel-container {
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
                 position: relative;
             } 
-        
+
             .carousel-slide {
                 display: flex;
                 max-width: 100%;
                 max-height: 100%;        
             }
-        
+
             .div6 h3 {
                 color: #f13f3d;
                 font-size: 4vh;
                 text-align: center;
-                
+
             }
-        
+
             .div6 p {
                 color: #f13f3d;
             }
-             
+
             button {background-color: transparent;
                 border: transparent;
             }
-        
+
             #back-button {
                 position: absolute;
                 bottom: 0;
                 left: 32%;
                  outline: none;
-            
+
             }
-        
+
             #next-button {
                 position: absolute;
                 bottom: 0;
                 right: 32%;
                 outline: none;
             }
-        
+
             #play-button {
                 position: absolute;
                 bottom: 0;
                 left: 42%;
                 outline: none;
             }
-        
+
             #pause-button {
                 position: absolute;
                 bottom: 0;
                 right: 42%;
                 outline: none;
             }
-        
-        
-        
+
+
+
             /* Why FAC styling */
-        
-        
+
+
             .div9 { grid-area: 17/ 1/ 22/ 9;
                 padding-left: 10%;
                 padding-right: 10%;
             }
-        
+
             .div9 .div9text {
                 column-count: 4;
                 column-gap: 4vw;
                 font-size: 1.75vh;
                 column-rule-style: dotted;
             }
-        
+
             .div9 h3 {
                 color: #f13f3d;
                 font-size: 3vh;
                 text-align: center;
-                
+
             }
-        
+
             .div9 h4 {
                 color: #f13f3d;
                 font-size: 2vh;
                 text-align: center;
-                
+
             }
 
-    
+
     }
-    
-    
-
-
-
