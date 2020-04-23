@@ -74,7 +74,6 @@
         background-color: #f13f3d;
         width: 120px;
         height: 120px;
-        position: static;
         position: fixed;
         bottom: 70%;
         right: 2%;
@@ -93,7 +92,6 @@
         background-color: #f13f3d;
         width: 120px;
         height: 120px;
-        position: static;
         position: fixed;
         bottom: 10%;
         right: 2%;
@@ -142,14 +140,17 @@
 
     .div3 { grid-area: 4 / 3 / 7 / 7; 
        display: flex;
-       justify-content: center
-;
+       justify-content: center;
+       opacity: 0;
      }
-    .div4 { grid-area: 4 / 2 / 7 / 4; }
+    .div4 { grid-area: 4 / 2 / 7 / 4;
+        opacity: 0;
+    }
             
     .div5 { grid-area: 3 / 3 / 5 / 7; 
-            justify-self: center;
-            }
+        justify-self: center;
+        opacity: 0;
+    }
     
     .div7 { grid-area: 4 / 1 / 7 / 2; 
             display: flex;
@@ -168,6 +169,49 @@
     }
 
 
+
+    /* Animation  */
+
+    .fading {
+        opacity: 1; 
+        animation: fadeIn ease-in 2s;
+    }
+
+    @keyframes fadeIn {
+
+        0% {
+           opacity: 0;
+           transform: translateY(-300px);
+        }
+
+        50% {
+            transform: translateY(0);
+
+        }
+
+        100% {
+            opacity: 1;
+            
+        }
+
+    }
+
+    .changeButtons {
+        animation: buttonHover ease-in-out 1s;
+    }
+
+    @keyframes buttonHover {
+        
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(90deg);
+
+        }
+
+    }
 
 
     /* Carousel styling */
