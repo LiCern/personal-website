@@ -100,9 +100,9 @@ const addClass = (div, time) => {
     }, time);
 }
 
-addClass('.div3', 1000);
-addClass('.div5', 2000);
-addClass('.div4', 3000);
+addClass('.central-img-div', 1000);
+addClass('.top-logo-div', 2000);
+addClass('.fac-logo-div', 3000);
 
 //Hovering function 
 

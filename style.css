@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
 .parent {
     display: grid;
@@ -12,9 +13,7 @@
 
     img {
         max-height: 100%;
-        max-width: 100%;} 
-   
-    
+        max-width: 100%;}   
        
     #application-1 { 
         grid-area: 1 / 1 / 2 / 2;
@@ -60,7 +59,7 @@
 
 
 
-    .div7 {
+    .quote-div {
         padding-left: 30%;
     }
 
@@ -138,25 +137,25 @@
 
     
 
-    .div3 { grid-area: 4 / 3 / 7 / 7; 
+    .central-img-div { grid-area: 4 / 3 / 7 / 7; 
        display: flex;
        justify-content: center;
        opacity: 0;
      }
-    .div4 { grid-area: 4 / 2 / 7 / 4;
+    .fac-logo-div { grid-area: 4 / 2 / 7 / 4;
         opacity: 0;
     }
             
-    .div5 { grid-area: 3 / 3 / 5 / 7; 
+    .top-logo-div { grid-area: 3 / 3 / 5 / 7; 
         justify-self: center;
         opacity: 0;
     }
     
-    .div7 { grid-area: 4 / 1 / 7 / 2; 
+    .quote-div { grid-area: 4 / 1 / 7 / 2; 
             display: flex;
             align-content: flex-end;}
 
-    .div8 { grid-area: 8 / 2 / 12 / 8; 
+    .about-me-div { grid-area: 8 / 2 / 12 / 8; 
         padding-left: 60px;
         padding-right: 60px;
         font-size: 1.5vw;
@@ -216,7 +215,7 @@
 
     /* Carousel styling */
 
-    .div6 { grid-area: 13 / 3 / 17 / 7; }
+    .carousel-div { grid-area: 13 / 3 / 17 / 7; }
 
     .carousel-container {
         width: 100%;
@@ -231,14 +230,14 @@
         max-height: 100%;        
     }
 
-    .div6 h3 {
+    .carousel-div h3 {
         color: #f13f3d;
         font-size: 4vh;
         text-align: center;
         
     }
 
-    .div6 p {
+    .carousel-div p {
         color: #f13f3d;
     }
      
@@ -280,13 +279,13 @@
     /* Why FAC styling */
 
 
-    .div9 { grid-area: 18/ 1/ 22/ 9;
+    .fac-div { grid-area: 18/ 1/ 22/ 9;
         
         padding-left: 12%;
         padding-right: 12%;
     }
 
-    .div9 .div9text {
+    .fac-div .fac-text {
         column-count: 4;
         column-gap: 3vw;
         font-size: 1.6vh;
@@ -294,14 +293,14 @@
         text-align: center;
     }
 
-    .div9 h3 {
+    .fac-div h3 {
         color: #f13f3d;
         font-size: 2.5vh;
         text-align: center;
         
     }
 
-    .div9 h4 {
+    .fac-div h4 {
         color: #f13f3d;
         font-size: 2vh;
         text-align: center;
@@ -393,19 +392,19 @@
            #central-img {
                border-radius: 50%;}
 
-            .div3 { grid-area: 3 / 2 / 5 / 4;}
+            .central-img-div { grid-area: 3 / 2 / 5 / 4;}
 
-            .div4 { grid-area: 3 / 1 / 4 / 3;
+            .fac-logo-div { grid-area: 3 / 1 / 4 / 3;
                     display: flex;
                     justify-content: center; }
 
-            .div5 { grid-area: 2 / 2 / 3 / 4; 
+            .top-logo-div { grid-area: 2 / 2 / 3 / 4; 
                 display: flex;
                 align-items: flex-end; 
 
                      }
 
-            .div7 {   grid-area: 3 / 4 / 4 / 5;
+            .quote-div {   grid-area: 3 / 4 / 4 / 5;
                 font-size: 2vw;    
                 }
 
@@ -414,7 +413,7 @@
                 display: none;
             }
 
-            .div8 { grid-area: 5 / 1 / 9 / 5; 
+            .about-me-div { grid-area: 5 / 1 / 9 / 5; 
                 padding-left: 20px;
                 padding-right: 20px;
                 font-size: 2.3vw;
@@ -430,7 +429,7 @@
 
             /* Carousel styling */
 
-            .div6 { grid-area: 9 / 1 / 15 / 5;
+            .carousel-div { grid-area: 9 / 1 / 15 / 5;
                 width: 100%;
                 height:100; }
 
@@ -447,14 +446,14 @@
                 max-height: 100%;        
             }
 
-            .div6 h3 {
+            .carousel-div h3 {
                 color: #f13f3d;
                 font-size: 2vh;
                 text-align: center;
 
             }
 
-            .div6 p {
+            .carousel-div p {
                 color: #f13f3d;
                 font-size: 2vh;
                 text-align: center;
@@ -499,13 +498,13 @@
             /* Why FAC styling */
 
 
-            .div9 { grid-area: 17/ 1/ 22/ 9;
+            .fac-div { grid-area: 17/ 1/ 22/ 9;
                 padding-left: 10%;
                 padding-right: 10%;
                 background-color: #fcdcdc;;
             }
 
-            .div9 .div9text {
+            .fac-div .fac-text {
                 column-count: 1;
                 font-size: 1.75vh;
                 text-align: center;
@@ -513,14 +512,14 @@
                 
             }
 
-            .div9 h3 {
+            .fac-div h3 {
                 color: #f13f3d;
                 font-size: 2vh;
                 text-align: center;
 
             }
 
-            .div9 h4 {
+            .fac-div h4 {
                 color: #f13f3d;
                 font-size: 1.75vh;
                 text-align: center;
