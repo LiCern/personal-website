@@ -1,4 +1,4 @@
-//quesry selectors for the carousel containter and carousel images
+//query selectors for the carousel containter and carousel images
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.querySelectorAll('.carousel-slide img');
 
@@ -92,7 +92,35 @@ document.getElementById("back-button").addEventListener("click", backwardResetTi
 
 
 
+//Fading in function
 
+const addClass = (div, time) => {
+    setTimeout(function(){ 
+        document.querySelector(div).classList.add("fading");
+    }, time);
+}
+
+addClass('.div3', 1000);
+addClass('.div5', 2000);
+addClass('.div4', 3000);
+
+//Hovering function 
+
+const hoverButtons = (div) => {
+    document.querySelector(div).addEventListener("mouseover", function(){ 
+        document.querySelector(div).classList.add("changeButtons");
+        
+    });
+    
+    document.querySelector(div).addEventListener("mouseout", function(){
+        document.querySelector(div).classList.remove("changeButtons");
+    });
+          
+}
+
+hoverButtons('#fun-facts-button');
+hoverButtons('#japan-button');
+hoverButtons('#why-FAC-button');
 
 
 
