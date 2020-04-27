@@ -11,35 +11,15 @@ carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'
 //Transition functions (a.k.a the backbone of the carousel)
 
 const transitionSlideForward = () => {
-    if ( carouselImages[counter].id == "firstImageCopy") {
-        carouselSlide.style.transition = 'none';
-        counter = 1;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
-        // carouselSlide.style.transition = 'transform 1s ease-in';
-        counter++;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
-        
-    }
-
-    else { carouselSlide.style.transition = 'transform 1s ease-in';
+    carouselSlide.style.transition = 'transform 1s ease-in';
     counter++;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; }
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
 }
 
 const transitionSlideBack = () => {
-    if (carouselImages[counter].id == "lastImageCopy") {
-        carouselSlide.style.transition = 'none';
-        counter = carouselImages.length - 2;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
-        // carouselSlide.style.transition = 'none';
-        counter--;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
-        
-    }
-    
-    else { carouselSlide.style.transition = 'transform 1s ease-in';
+    carouselSlide.style.transition = 'transform 1s ease-in';
     counter--;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';}
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
 }
 
 
@@ -74,12 +54,19 @@ const backwardResetTimer = () => {
 
 //Jumping from image clones to the original image and removing the the transition, thus creating the illusion of an infinite loop
 
-if (carouselImages[counter].id === "lastImagecopy") {
-    carouselSlide.style.transition = 0;
-    counter = carouselImages.length - 2;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
-}
+carouselSlide.addEventListener("transitionend", () => {
+    if ( carouselImages[counter].id == "firstImageCopy") {
+        carouselSlide.style.transition = 'none';
+        counter = 1;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
+    }
 
+    if (carouselImages[counter].id == "lastImageCopy") {
+        carouselSlide.style.transition = 'none';
+        counter = carouselImages.length - 2;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+    }
+});
 
 
 //Buttons with related functions
@@ -88,8 +75,6 @@ document.getElementById("play-button").addEventListener("click", startLoop); //i
 document.getElementById("pause-button").addEventListener("click", stopLoop); //if clicked, clears interval and pauses carousel
 document.getElementById("next-button").addEventListener("click", forwardResetTimer);
 document.getElementById("back-button").addEventListener("click", backwardResetTimer);
-
-
 
 
 //Fading in function
