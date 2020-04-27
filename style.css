@@ -277,10 +277,6 @@ button {
     font-size: 2.5vh;
 }
 
-.fac-div h4 {
-    color: #f13f3d;
-    font-size: 2vh;
-}
 
 
 /* RESPONSIVENESS FOR MOBILES */
@@ -405,10 +401,6 @@ button {
 
     .fac-div h3 {
         font-size: 2vh;
-    }
-
-    .fac-div h4 {
-        font-size: 1.75vh;
     }
 
 }
