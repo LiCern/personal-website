@@ -5,21 +5,41 @@ const carouselImages = document.querySelectorAll('.carousel-slide img');
 //counter 
 
 let counter = 1;
-const scrollWidth = carouselImages[0].clientWidth;
+let scrollWidth = carouselImages[0].clientWidth;
 carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; //in order to start at the first image and not the lastImageCopy when the page loads
 
 //Transition functions (a.k.a the backbone of the carousel)
 
 const transitionSlideForward = () => {
-    carouselSlide.style.transition = 'transform 1s ease-in';
+    if ( carouselImages[counter].id == "firstImageCopy") {
+        carouselSlide.style.transition = 'none';
+        counter = 1;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
+        // carouselSlide.style.transition = 'transform 1s ease-in';
+        counter++;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+        
+    }
+
+    else { carouselSlide.style.transition = 'transform 1s ease-in';
     counter++;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; }
 }
 
 const transitionSlideBack = () => {
-    carouselSlide.style.transition = 'transform 1s ease-in';
+    if (carouselImages[counter].id == "lastImageCopy") {
+        carouselSlide.style.transition = 'none';
+        counter = carouselImages.length - 2;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+        // carouselSlide.style.transition = 'none';
+        counter--;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+        
+    }
+    
+    else { carouselSlide.style.transition = 'transform 1s ease-in';
     counter--;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';}
 }
 
 
@@ -51,22 +71,25 @@ const backwardResetTimer = () => {
 
 }
 
+const keyboardNav = (e) => {
+    if (e.keyCode == "37") {
+        backwardResetTimer();
+    } else if (e.keyCode == "39") {
+        forwardResetTimer();
+    }
+}
+
+window.addEventListener("keydown", keyboardNav);
+
 
 //Jumping from image clones to the original image and removing the the transition, thus creating the illusion of an infinite loop
 
-carouselSlide.addEventListener("transitionend", () => {
-    if ( carouselImages[counter].id == "firstImageCopy") {
-        carouselSlide.style.transition = 'none';
-        counter = 1;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
-    }
+if (carouselImages[counter].id === "lastImagecopy") {
+    carouselSlide.style.transition = 0;
+    counter = carouselImages.length - 2;
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
+}
 
-    if (carouselImages[counter].id == "lastImageCopy") {
-        carouselSlide.style.transition = 'none';
-        counter = carouselImages.length - 2;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
-    }
-});
 
 
 //Buttons with related functions
@@ -77,6 +100,7 @@ document.getElementById("next-button").addEventListener("click", forwardResetTim
 document.getElementById("back-button").addEventListener("click", backwardResetTimer);
 
 
+
 //Fading in function
 
 const addClass = (div, time) => {
@@ -85,9 +109,9 @@ const addClass = (div, time) => {
     }, time);
 }
 
-addClass('.central-img-div', 1000);
-addClass('.top-logo-div', 2000);
-addClass('.fac-logo-div', 3000);
+addClass('.central-img-div', 500);
+addClass('.top-logo-div', 1500);
+addClass('.fac-logo-div', 2500);
 
 //Hovering function 
 
