@@ -74,16 +74,16 @@ text-decoration-style: none;
     justify-content: center;
     text-align: center;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 6vw;
+    height: 12vh;
     position: fixed;
     background-color: #f13f3d;    
 }
 
 .navigation-buttons a {
-    color:blanchedalmond; 
+    color: white; 
     text-decoration: none;
-    font-size: 20px;
+    font-size: 2vh;
     font-family: 'Cormorant Garmond', serif;
 }
 
@@ -163,7 +163,7 @@ hr {
 
 .fading {
     opacity: 1; 
-    animation: fadeIn ease-in 2s;
+    animation: fadeIn ease-in 1.5s;
 }
 
 @keyframes fadeIn {
