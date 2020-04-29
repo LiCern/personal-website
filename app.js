@@ -8,7 +8,7 @@ let counter = 1;
 let scrollWidth 
 
 window.addEventListener('load', (event) => {
-    scrollWidth = carouselImages[0].clientWidth;
+    scrollWidth = carouselImages[0].getBoundingClientRect().width;
     carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
 })
 
