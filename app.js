@@ -5,8 +5,14 @@ const carouselImages = document.querySelectorAll('.carousel-slide img');
 //counter 
 
 let counter = 1;
-let scrollWidth = carouselImages[0].clientWidth;
-carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; //in order to start at the first image and not the lastImageCopy when the page loads
+let scrollWidth 
+
+window.addEventListener('load', (event) => {
+    scrollWidth = carouselImages[0].clientWidth;
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+})
+
+ //in order to start at the first image and not the lastImageCopy when the page loads
 
 //Transition functions (a.k.a the backbone of the carousel)
 
