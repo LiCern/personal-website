@@ -11,35 +11,15 @@ carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'
 //Transition functions (a.k.a the backbone of the carousel)
 
 const transitionSlideForward = () => {
-    if ( carouselImages[counter].id == "firstImageCopy") {
-        carouselSlide.style.transition = 'none';
-        counter = 1;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
-        // carouselSlide.style.transition = 'transform 1s ease-in';
-        counter++;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
-        
-    }
-
-    else { carouselSlide.style.transition = 'transform 1s ease-in';
+    carouselSlide.style.transition = 'transform 1s ease-in';
     counter++;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; }
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
 }
 
 const transitionSlideBack = () => {
-    if (carouselImages[counter].id == "lastImageCopy") {
-        carouselSlide.style.transition = 'none';
-        counter = carouselImages.length - 2;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
-        // carouselSlide.style.transition = 'none';
-        counter--;
-        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
-        
-    }
-    
-    else { carouselSlide.style.transition = 'transform 1s ease-in';
+    carouselSlide.style.transition = 'transform 1s ease-in';
     counter--;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';}
+    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
 }
 
 
@@ -71,6 +51,8 @@ const backwardResetTimer = () => {
 
 }
 
+//Keyboard navigation
+
 const keyboardNav = (e) => {
     if (e.keyCode == "37") {
         backwardResetTimer();
@@ -84,11 +66,19 @@ window.addEventListener("keydown", keyboardNav);
 
 //Jumping from image clones to the original image and removing the the transition, thus creating the illusion of an infinite loop
 
-if (carouselImages[counter].id === "lastImagecopy") {
-    carouselSlide.style.transition = 0;
-    counter = carouselImages.length - 2;
-    carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
-}
+carouselSlide.addEventListener("transitionend", () => {
+    if (carouselImages[counter].id == "firstImageCopy") {
+        carouselSlide.style.transition = 'none';
+        counter = 1;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
+    }
+
+    if (carouselImages[counter].id == "lastImageCopy") {
+        carouselSlide.style.transition = 'none';
+        counter = carouselImages.length - 2;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+    }
+});
 
 
 
@@ -110,7 +100,7 @@ const addClass = (div, time) => {
 }
 
 addClass('.central-img-div', 500);
-addClass('.top-logo-div', 1500);
+addClass('.top-logo-div', 5000);
 addClass('.fac-logo-div', 2500);
 
 //Hovering function 

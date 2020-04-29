@@ -1,15 +1,17 @@
 * {
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     scroll-behavior: smooth;
   }
-
+  
+body {
+    background-color:#fcdcdc;
+}
 .parent {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 8vh 2vh repeat(22, 12vw) 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    background-color:#fcdcdc;
     font-family: 'IBM Plex Mono', monospace;
 }
 
@@ -348,7 +350,7 @@ button {
         font-size: 2vh;
     }
 
-    
+
     /* WHY FAC SECTION */
 
     .fac-div { 
