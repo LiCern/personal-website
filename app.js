@@ -5,14 +5,25 @@ const carouselImages = document.querySelectorAll('.carousel-slide img');
 //counter 
 
 let counter = 1;
+
+
+//carousel width responsiveness when loading and when resizing tab
 let scrollWidth 
 
 window.addEventListener('load', (event) => {
-    scrollWidth = carouselImages[0].getBoundingClientRect().width;
+    scrollWidth = carouselImages[0].getBoundingClientRect().width; 
+    //in order to start at the first image and not the lastImageCopy when the page loads
     carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
 })
 
- //in order to start at the first image and not the lastImageCopy when the page loads
+window.addEventListener('resize', () => {
+    const newScrollWidth = carouselImages[0].getBoundingClientRect().width;
+    if (newScrollWidth !== scrollWidth) {
+        scrollWidth = newScrollWidth;
+        carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
+    };
+});
+
 
 //Transition functions (a.k.a the backbone of the carousel)
 
@@ -54,7 +65,6 @@ const backwardResetTimer = () => {
     transitionSlideBack();
     clearInterval(autoLoop);
     autoLoop = setInterval(transitionSlideForward, 5000);
-
 }
 
 //Keyboard navigation
