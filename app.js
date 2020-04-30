@@ -10,7 +10,7 @@ let counter = 1;
 //carousel width responsiveness when loading and when resizing tab
 let scrollWidth 
 
-window.addEventListener('load', (event) => {
+window.addEventListener('load', () => {
     scrollWidth = carouselImages[0].getBoundingClientRect().width; 
     //in order to start at the first image and not the lastImageCopy when the page loads
     carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
@@ -25,7 +25,7 @@ window.addEventListener('resize', () => {
 });
 
 
-//Transition functions (a.k.a the backbone of the carousel)
+//Transition functions
 
 const transitionSlideForward = () => {
     carouselSlide.style.transition = 'transform 1s ease-in';
@@ -39,7 +39,6 @@ const transitionSlideBack = () => {
     carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
 }
 
-
 //Toggle automatically looping through all images with play/pause functions
 
 let autoLoop = setInterval(transitionSlideForward, 5000);   
@@ -52,32 +51,61 @@ const stopLoop = () => {
     clearInterval(autoLoop);
 }
 
-//Stop the autoLoop from going forward at its normal interval times when the back/forward buttons are clicked 
+
+
+//Stop the autoLoop from going forward at its normal interval times when the back/forward buttons are clicked
+//in case the autoLoop is about to go forward and it jumps two images 
 //Reset the interval instead and ensure smooth transition
 
-const forwardResetTimer = () => {
+let acceptNavigationInput = true;
+
+const forwardResetTimer = () => { 
+    if (!acceptNavigationInput) return;
+    
+    clearInterval(autoLoop); //on this line to prevent a very rare case in which the function is called and the 
+                             //code below has time to execute calling trasitionSlideBack, jumping two pictures
+
+    acceptNavigationInput = false;
+
+    setTimeout(() => {
+        acceptNavigationInput = true;
+    }, 1050); //prevent user from clicking multiple times before the transition has had time to execute 
+              //therefore not triggering transitionend-event-listener at the end of the carousel 
+
     transitionSlideForward();
-    clearInterval(autoLoop);
     autoLoop = setInterval(transitionSlideForward, 5000);
 }
 
 const backwardResetTimer = () => {
+    if (!acceptNavigationInput) return;
+   
+    clearInterval(autoLoop); 
+
+    acceptNavigationInput = false;
+
+    setTimeout(() => {
+        acceptNavigationInput = true;
+    }, 1050);
+
     transitionSlideBack();
-    clearInterval(autoLoop);
     autoLoop = setInterval(transitionSlideForward, 5000);
 }
+
+
 
 //Keyboard navigation
 
 const keyboardNav = (e) => {
     if (e.keyCode == "37") {
         backwardResetTimer();
+        
     } else if (e.keyCode == "39") {
         forwardResetTimer();
     }
 }
 
 window.addEventListener("keydown", keyboardNav);
+
 
 
 //Jumping from image clones to the original image and removing the the transition, thus creating the illusion of an infinite loop
@@ -116,7 +144,7 @@ const addClass = (div, time) => {
 }
 
 addClass('.central-img-div', 500);
-addClass('.top-logo-div', 5000);
+addClass('.top-logo-div', 1500);
 addClass('.fac-logo-div', 2500);
 
 //Hovering function 
