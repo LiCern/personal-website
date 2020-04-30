@@ -2,6 +2,7 @@
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.querySelectorAll('.carousel-slide img');
 
+
 //counter 
 
 let counter = 1;
@@ -28,16 +29,19 @@ window.addEventListener('resize', () => {
 //Transition functions
 
 const transitionSlideForward = () => {
+    if (document.hidden) return; //preventing function from running when tab is in the background 
     carouselSlide.style.transition = 'transform 1s ease-in';
     counter++;
     carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)'; 
 }
 
 const transitionSlideBack = () => {
+    if (document.hidden) return;
     carouselSlide.style.transition = 'transform 1s ease-in';
     counter--;
     carouselSlide.style.transform = 'translateX(' + (-scrollWidth * counter) + 'px)';
 }
+
 
 //Toggle automatically looping through all images with play/pause functions
 
@@ -50,7 +54,6 @@ const startLoop = () => {
 const stopLoop = () => {
     clearInterval(autoLoop);
 }
-
 
 
 //Stop the autoLoop from going forward at its normal interval times when the back/forward buttons are clicked
@@ -92,7 +95,6 @@ const backwardResetTimer = () => {
 }
 
 
-
 //Keyboard navigation
 
 const keyboardNav = (e) => {
@@ -105,7 +107,6 @@ const keyboardNav = (e) => {
 }
 
 window.addEventListener("keydown", keyboardNav);
-
 
 
 //Jumping from image clones to the original image and removing the the transition, thus creating the illusion of an infinite loop
@@ -125,14 +126,12 @@ carouselSlide.addEventListener("transitionend", () => {
 });
 
 
-
 //Buttons with related functions
 
 document.getElementById("play-button").addEventListener("click", startLoop); //if clicked, restarts loop
 document.getElementById("pause-button").addEventListener("click", stopLoop); //if clicked, clears interval and pauses carousel
 document.getElementById("next-button").addEventListener("click", forwardResetTimer);
 document.getElementById("back-button").addEventListener("click", backwardResetTimer);
-
 
 
 //Fading in function
@@ -146,6 +145,7 @@ const addClass = (div, time) => {
 addClass('.central-img-div', 500);
 addClass('.top-logo-div', 1500);
 addClass('.fac-logo-div', 2500);
+
 
 //Hovering function 
 
