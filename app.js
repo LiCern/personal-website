@@ -1,14 +1,14 @@
-//query selectors for the carousel containter and carousel images
+//Query selectors for the carousel containter and carousel images
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.querySelectorAll('.carousel-slide img');
 
 
-//counter 
+//Counter 
 
 let counter = 1;
 
 
-//carousel width responsiveness when loading and when resizing tab
+//Carousel width responsiveness when loading and when resizing tab
 let scrollWidth 
 
 window.addEventListener('load', () => {

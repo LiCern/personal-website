@@ -59,7 +59,6 @@ img {
 }
 
 
-
 /* NAVIGATION BUTTONS */
 
 .navigation-buttons {
@@ -248,6 +247,7 @@ button {
     width: 7vh;
 }
 
+
 /* WHY FAC SECTION */
 
 .fac-div { 
@@ -378,5 +378,4 @@ button {
     .fac-div h3 {
         font-size: 2vh;
     }
-
 }
